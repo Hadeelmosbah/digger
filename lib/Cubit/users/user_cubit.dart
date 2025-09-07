@@ -1,31 +1,27 @@
-import 'package:digger/Cubit/user_state.dart';
-import 'package:digger/core/api/api_consumer.dart';
-import 'package:digger/core/api/end_points.dart';
-import 'package:digger/core/api/errors/exceptions.dart';
+import 'package:digger/Cubit/users/user_state.dart';
 import 'package:dio/dio.dart';
-import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
-import '../core/api/errors/error_model.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import '../../core/api/api_consumer.dart';
+import '../../core/api/end_points.dart';
+import '../../core/api/errors/exceptions.dart';
 
 class UserCubit extends Cubit<UserState> {
   UserCubit(this.api) : super(UserInitial());
+
   final ApiConsumer api;
+
   GlobalKey<FormState> signInFormKey = GlobalKey();
-
   TextEditingController signInEmail = TextEditingController();
-
   TextEditingController signInPassword = TextEditingController();
 
   GlobalKey<FormState> signUpFormKey = GlobalKey();
-
   TextEditingController signUpName = TextEditingController();
-
   TextEditingController signUpEmail = TextEditingController();
-
   TextEditingController signUpPassword = TextEditingController();
 
-  SignIn() async {
+  Future<void> signIn() async {
     try {
       emit(SignInLoading());
 
@@ -39,21 +35,26 @@ class UserCubit extends Cubit<UserState> {
       );
 
       if (response.statusCode == 200) {
+        final token = response.data;
+
+        if (token != null && token is String) {
+          final prefs = await SharedPreferences.getInstance();
+          await prefs.setString("token", token);
+        }
+
         emit(SignInSuccess());
       } else {
-        emit(
-          SignInFailure(
-            errMessage: "Unexpected status: ${response.statusCode}",
-          ),
-        );
+        emit(SignInFailure(
+            errMessage: "Unexpected status: ${response.statusCode}"));
       }
     } on ServerException catch (e) {
-      emit(SignInFailure(errMessage:  e.errModel.description ));
+      emit(SignInFailure(errMessage: e.errModel.description));
     } catch (e) {
       emit(SignInFailure(errMessage: e.toString()));
     }
   }
-  SignUp() async {
+
+  Future<void> signUp() async {
     try {
       emit(SignUpLoading());
 
@@ -68,17 +69,10 @@ class UserCubit extends Cubit<UserState> {
       );
 
       if (response.statusCode == 200) {
-
-        final List data = response.data;
-
-
-        final errorModel = ErrorModel.fromJson(data.first);
-
         emit(SignUpSuccess());
       } else {
         emit(SignUpFailure(
-          errMessage: "Unexpected status: ${response.statusCode}",
-        ));
+            errMessage: "Unexpected status: ${response.statusCode}"));
       }
     } on ServerException catch (e) {
       emit(SignUpFailure(errMessage: e.errModel.description ?? "Server error"));
@@ -87,6 +81,20 @@ class UserCubit extends Cubit<UserState> {
     }
   }
 
+  Future<void> logout() async {
+    try {
+      emit(LogoutLoading());
+
+      final prefs = await SharedPreferences.getInstance();
+      await prefs.remove("token");
+
+
+      final check = prefs.getString("token");
+      debugPrint("Token after logout: $check");
+
+      emit(LogoutSuccess());
+    } catch (e) {
+      emit(LogoutFailure(errMessage: e.toString()));
+    }
+  }
 }
-
-

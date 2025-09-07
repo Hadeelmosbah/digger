@@ -1,5 +1,4 @@
-import 'package:digger/Cubit/user_cubit.dart';
-import 'package:digger/Cubit/user_state.dart';
+import 'package:digger/Cubit/users/user_cubit.dart';
 import 'package:digger/Presentation/widgets/custom_auth_screen/Animated_container.dart';
 import 'package:digger/Presentation/widgets/custom_auth_screen/custom_textfield.dart';
 import 'package:digger/Presentation/widgets/custom_auth_screen/footer_auth.dart';
@@ -8,6 +7,10 @@ import 'package:digger/Presentation/widgets/custom_auth_screen/custom_button.dar
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:toastification/toastification.dart';
+import '../../Cubit/users/user_state.dart';
+import '../../core/constant/colors.dart';
+import '../../core/constant/strings.dart';
+
 import '../models/Validator.dart';
 import '../widgets/custom_auth_screen/Toast_Helper.dart';
 import '../widgets/custom_auth_screen/intro_text.dart';
@@ -22,10 +25,10 @@ class SignUpScreen extends StatelessWidget {
         if (state is SignUpSuccess) {
           ToastHelper.showToast(
             context: context,
-            message: 'Account created successfully',
+            message: AppStrings.signUpSuccess,
             type: ToastificationType.success,
           );
-          Navigator.of(context).pushReplacementNamed("Verification");
+          Navigator.of(context).pushReplacementNamed("Home");
         } else if (state is SignUpFailure) {
           ToastHelper.showToast(
             context: context,
@@ -41,9 +44,9 @@ class SignUpScreen extends StatelessWidget {
           resizeToAvoidBottomInset: false,
           body: Stack(
             children: [
-              HeaderAuthScreen(
-                title: 'Hello!',
-                subtitle: 'Welcome to Digger App',
+              const HeaderAuthScreen(
+                title: AppStrings.loginHello,
+                subtitle: AppStrings.loginWelcome,
               ),
               AuthAnimatedContainer(
                 child: SingleChildScrollView(
@@ -53,12 +56,12 @@ class SignUpScreen extends StatelessWidget {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        IntroText(text: 'Sign Up'),
+                        IntroText(text: AppStrings.signUpTitle),
                         const SizedBox(height: 20),
 
                         CustomTextField(
                           controller: cubit.signUpName,
-                          hint: "Username",
+                          hint: AppStrings.username,
                           icon: Icons.person_2_outlined,
                           validator: Validators.validateUsername,
                         ),
@@ -66,7 +69,7 @@ class SignUpScreen extends StatelessWidget {
 
                         CustomTextField(
                           controller: cubit.signUpEmail,
-                          hint: "Email",
+                          hint: AppStrings.email,
                           icon: Icons.email_outlined,
                           validator: Validators.validateEmail,
                         ),
@@ -74,30 +77,32 @@ class SignUpScreen extends StatelessWidget {
 
                         CustomTextField(
                           controller: cubit.signUpPassword,
-                          hint: "Password",
+                          hint: AppStrings.password,
                           icon: Icons.lock_outline,
                           obscure: true,
                           validator: Validators.validatePassword,
                         ),
-                        const SizedBox(height: 30),
-
-                        state is SignUpLoading
-                            ? const CircularProgressIndicator()
-                            : CustomButton(
-                                buttonText: "SIGN UP",
-                                onPressed: () {
-                                  if (cubit.signUpFormKey.currentState!
-                                      .validate()) {
-                                    cubit.SignUp();
-                                  }
-                                },
-                              ),
-
                         const SizedBox(height: 20),
 
+                        state is SignUpLoading
+                            ? const CircularProgressIndicator(
+                          color: AppColors.secondary,
+                        )
+                            : CustomButton(
+                          buttonText: AppStrings.signUpButton,
+                          onPressed: () {
+                            if (cubit.signUpFormKey.currentState!
+                                .validate()) {
+                              cubit.signUp();
+                            }
+                          },
+                        ),
+
+                        const SizedBox(height: 10),
+
                         AuthFooter(
-                          bottomText: "Already have an account?",
-                          bottomActionText: "Log in",
+                          bottomText: AppStrings.alreadyHaveAccount,
+                          bottomActionText: AppStrings.login,
                           onBottomTap: () {
                             Navigator.of(context).pushNamed("Login");
                           },

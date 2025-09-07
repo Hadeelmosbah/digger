@@ -1,0 +1,98 @@
+{
+  "@@locale": "en",
+
+  "skip": "Skip",
+  "getStarted": "Let’s Get Started",
+  "alreadyHaveAccount": "Already have an account?",
+  "login": "Log In",
+
+  "onboarding1Title1": "Welcome To The \n World Of ",
+  "onboarding1Title2": "Digger.",
+  "onboarding1Description": "The Perfect Solution For Metal Prices Prediction\nWith Simple Tools And Visuals.",
+
+  "onboarding2Title1": "For ",
+  "onboarding2Title2": "Those Looking ",
+  "onboarding2Title3": "For\n Accuracy.",
+  "onboarding2Description": "Explore The Visuals And Predictions of Metal\nPrices By Ease.",
+
+  "onboarding3Title1": "Your Journey Of ",
+  "onboarding3Title2": "Accuracy ",
+  "onboarding3Title3": "\n And ",
+  "onboarding3Title4": "Simplicity ",
+  "onboarding3Title5": "\nBegins Here.",
+  "onboarding3Description": "",
+
+  "loginHello": "Hello!",
+  "loginWelcome": "Welcome to Digger App",
+  "loginTitle": "Log In",
+  "loginButton": "LOG IN",
+  "loginNoAccount": "Don't have an account?",
+  "loginSignUp": "Sign Up",
+  "loginForgotPassword": "Forgot Password ?",
+  "loginJustTakeALook": "Just take a look",
+  "loginOrContinue": "or continue with",
+
+  "email": "Email",
+  "password": "Password",
+  "username": "Username",
+
+  "loginSuccess": "Login successful",
+  "loginFailure": "This account does not exist",
+
+  "enterEmail": "Please enter your email",
+  "invalidEmail": "Please enter a valid email",
+
+  "enterPassword": "Please enter your password",
+  "shortPassword": "Password must be at least 6 characters",
+
+  "enterUsername": "Please enter your username",
+  "shortUsername": "Username must be at least 3 characters",
+  "longUsername": "Username must be less than 20 characters",
+
+  "signUpTitle": "Sign Up",
+  "signUpButton": "SIGN UP",
+  "signUpSuccess": "Account created successfully",
+  "signUpFailure": "Failed to create account",
+
+  "settings": "Settings",
+  "account": "Account",
+  "editProfile": "Edit Profile",
+  "changePassword": "Change Password",
+
+  "notification": "Notification",
+  "notifications": "Notifications",
+  "appAlerts": "App Alerts",
+
+  "more": "More",
+  "languages": "Languages",
+  "darkMode": "Dark Mode",
+
+  "contact": "Contact",
+  "facebook": "Facebook",
+
+  "copyRight": "Copyright © 2025 Digger. All rights reserved.",
+
+  "logoutConfirmation": "Are you sure you want to log out?",
+  "cancel": "Cancel",
+  "logout": "Log out",
+
+  "save": "save",
+  "discard": "discard",
+
+  "alertsTitle": "Alert",
+  "markAsRead": "Mark as Read",
+  "goldTitle": "Gold Price Increased by 5%",
+  "goldSubtitle": "Following today’s rise in oil prices, gold surged from 4,523.7 EGP to reach 5,000 EGP — marking an increase of approximately 10.53%.",
+
+  "silverTitle": "Silver Price Drops by 3%",
+  "silverSubtitle": "Amid global market uncertainty, silver declined from 1,250 EGP to 1,212 EGP — reflecting a decrease of around 3%.",
+
+  "zincTitle": "Zinc Price Drops by 3%",
+  "zincSubtitle": "Amid global market uncertainty, zinc declined from 1,250 EGP to 1,212 EGP — reflecting a decrease of around 3%.",
+
+  "platinumTitle": "Platinum Price Drops by 3%",
+  "platinumSubtitle": "Amid global market uncertainty, platinum declined from 1,250 EGP to 1,212 EGP — reflecting a decrease of around 3%.",
+
+  "noAlerts": "No new alerts",
+  "upToDate": "You're up to date"
+}

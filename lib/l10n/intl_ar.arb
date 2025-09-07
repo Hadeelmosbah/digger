@@ -1,0 +1,98 @@
+{
+  "@@locale": "ar",
+
+  "skip": "تخطي",
+  "getStarted": "لنبدأ الرحلة",
+  "alreadyHaveAccount": "هل لديك حساب بالفعل؟",
+  "login": "تسجيل الدخول",
+
+  "onboarding1Title1": "مرحبًا بك في \n عالم ",
+  "onboarding1Title2": "ديجر.",
+  "onboarding1Description": "الحل المثالي لتوقع أسعار المعادن\nبأدوات بسيطة ورسوم توضيحية.",
+
+  "onboarding2Title1": "لـ ",
+  "onboarding2Title2": "من يبحث ",
+  "onboarding2Title3": "عن\n الدقة.",
+  "onboarding2Description": "اكتشف التوقعات والرسوم التوضيحية لأسعار المعادن بكل سهولة.",
+
+  "onboarding3Title1": "رحلتك نحو ",
+  "onboarding3Title2": "الدقة ",
+  "onboarding3Title3": "\n و ",
+  "onboarding3Title4": "البساطة ",
+  "onboarding3Title5": "\nتبدأ من هنا.",
+  "onboarding3Description": "",
+
+  "loginHello": "مرحبًا!",
+  "loginWelcome": "أهلاً بك في تطبيق ديجر",
+  "loginTitle": "تسجيل الدخول",
+  "loginButton": "تسجيل الدخول",
+  "loginNoAccount": "ليس لديك حساب؟",
+  "loginSignUp": "إنشاء حساب",
+  "loginForgotPassword": "هل نسيت كلمة المرور؟",
+  "loginJustTakeALook": "تصفح فقط",
+  "loginOrContinue": "أو تابع عبر",
+
+  "email": "البريد الإلكتروني",
+  "password": "كلمة المرور",
+  "username": "اسم المستخدم",
+
+  "loginSuccess": "تم تسجيل الدخول بنجاح",
+  "loginFailure": "هذا الحساب غير موجود",
+
+  "enterEmail": "من فضلك أدخل بريدك الإلكتروني",
+  "invalidEmail": "من فضلك أدخل بريدًا إلكترونيًا صحيحًا",
+
+  "enterPassword": "من فضلك أدخل كلمة المرور",
+  "shortPassword": "كلمة المرور يجب أن تكون 6 أحرف على الأقل",
+
+  "enterUsername": "من فضلك أدخل اسم المستخدم",
+  "shortUsername": "اسم المستخدم يجب أن يكون 3 أحرف على الأقل",
+  "longUsername": "اسم المستخدم يجب أن يكون أقل من 20 حرفًا",
+
+  "signUpTitle": "إنشاء حساب",
+  "signUpButton": "إنشاء حساب",
+  "signUpSuccess": "تم إنشاء الحساب بنجاح",
+  "signUpFailure": "فشل في إنشاء الحساب",
+
+  "settings": "الإعدادات",
+  "account": "الحساب",
+  "editProfile": "تعديل الملف الشخصي",
+  "changePassword": "تغيير كلمة المرور",
+
+  "notification": "إشعار",
+  "notifications": "الإشعارات",
+  "appAlerts": "تنبيهات التطبيق",
+
+  "more": "المزيد",
+  "languages": "اللغات",
+  "darkMode": "الوضع الداكن",
+
+  "contact": "اتصال",
+  "facebook": "فيسبوك",
+
+  "copyRight": "حقوق النشر © 2025 ديجر. جميع الحقوق محفوظة.",
+
+  "logoutConfirmation": "هل أنت متأكد أنك تريد تسجيل الخروج؟",
+  "cancel": "إلغاء",
+  "logout": "تسجيل الخروج",
+
+  "save": "حفظ",
+  "discard": "تجاهل",
+
+  "alertsTitle": "تنبيه",
+  "markAsRead": "تحديد كمقروء",
+  "goldTitle": "ارتفع سعر الذهب بنسبة 5%",
+  "goldSubtitle": "بعد ارتفاع أسعار النفط اليوم، قفز الذهب من 4,523.7 جنيه ليصل إلى 5,000 جنيه — بزيادة تقارب 10.53%.",
+
+  "silverTitle": "انخفض سعر الفضة بنسبة 3%",
+  "silverSubtitle": "في ظل حالة عدم اليقين بالسوق العالمية، تراجعت الفضة من 1,250 جنيه إلى 1,212 جنيه — بانخفاض يقارب 3%.",
+
+  "zincTitle": "انخفض سعر الزنك بنسبة 3%",
+  "zincSubtitle": "في ظل حالة عدم اليقين بالسوق العالمية، تراجع الزنك من 1,250 جنيه إلى 1,212 جنيه — بانخفاض يقارب 3%.",
+
+  "platinumTitle": "انخفض سعر البلاتين بنسبة 3%",
+  "platinumSubtitle": "في ظل حالة عدم اليقين بالسوق العالمية، تراجع البلاتين من 1,250 جنيه إلى 1,212 جنيه — بانخفاض يقارب 3%.",
+
+  "noAlerts": "لا توجد تنبيهات جديدة",
+  "upToDate": "أنت على اطلاع بآخر التحديثات"
+}

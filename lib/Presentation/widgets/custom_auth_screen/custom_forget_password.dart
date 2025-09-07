@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import '../../../core/constant/colors.dart';
+import '../../../core/constant/strings.dart';
 
 class CustomForgetPassword extends StatelessWidget {
   const CustomForgetPassword({super.key});
@@ -10,13 +12,13 @@ class CustomForgetPassword extends StatelessWidget {
       alignment: Alignment.centerRight,
       child: TextButton(
         onPressed: () {
-          Navigator.of(context).pushNamed("forgetpassword");
+          Navigator.of(context).pushNamed("Verification");
         },
         child: Text(
-          "Forgot Password ?",
+          AppStrings.loginForgotPassword,
           style: GoogleFonts.poppins(
             fontSize: 12,
-            color: Colors.black54,
+            color: AppColors.subtitle,
           ),
         ),
       ),

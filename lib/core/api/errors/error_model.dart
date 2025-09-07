@@ -1,15 +1,16 @@
 class ErrorModel {
-  final int? code;
+  final String? code;
   final String description;
   final Map<String, dynamic>? errors;
 
   ErrorModel({this.code, required this.description, this.errors});
 
-  factory ErrorModel.fromJson(Map<String, dynamic> jsonData) {
+  factory ErrorModel.fromJson(List<dynamic> jsonData) {
+    final first = jsonData.first as Map<String, dynamic>;
     return ErrorModel(
-      code: jsonData['code'] ,
-      description: jsonData['description'] ,
-      errors: jsonData['errors'] as Map<String, dynamic>?,
+      code: first['code'] ,
+      description: first['description'] ?? "Unknown error",
+      errors: first['errors'] as Map<String, dynamic>?,
     );
   }
 

@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import '../../../core/constant/colors.dart';
+
 
 class IntroText extends StatelessWidget {
-   final String text;
+  final String text;
   const IntroText({super.key, required this.text});
 
   @override
@@ -20,7 +22,7 @@ class IntroText extends StatelessWidget {
           style: GoogleFonts.poppins(
             fontSize: 28,
             fontWeight: FontWeight.bold,
-            color: const Color(0xff303B54),
+            color: AppColors.primary,
           ),
         ),
       ),

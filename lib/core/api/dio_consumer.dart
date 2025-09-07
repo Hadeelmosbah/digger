@@ -1,5 +1,4 @@
 import 'package:dio/dio.dart';
-
 import 'api_consumer.dart';
 import 'api_interceptors.dart';
 import 'end_points.dart';

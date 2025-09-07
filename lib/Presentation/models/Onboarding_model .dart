@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import '../../core/constant/colors.dart';
+import '../../core/constant/strings.dart';
+
 
 class OnboardingModel {
   final List<TextSpan> title;
@@ -16,108 +19,100 @@ class OnboardingModel {
 final List<OnboardingModel> onboardingData = [
   OnboardingModel(
     image: "assets/Onboarding/onboard1.png",
-    description:
-    "The Perfect Solution For Metal Prices Prediction\nWith Simple Tools And Visuals.",
+    description: AppStrings.onboarding1Description,
     title: [
       TextSpan(
-        text: "Welcome To The \n World Of ",
+        text: AppStrings.onboarding1Title1,
         style: GoogleFonts.poppins(
           fontSize: 22,
           fontWeight: FontWeight.bold,
-          color: const Color(0xff17223B),
+          color: AppColors.darkText,
         ),
       ),
       TextSpan(
-        text: "Digger.",
+        text: AppStrings.onboarding1Title2,
         style: GoogleFonts.poppins(
           fontSize: 23,
           fontWeight: FontWeight.bold,
-          color: const Color(0xffF4A300),
+          color: AppColors.highlight,
         ),
       ),
     ],
   ),
   OnboardingModel(
     image: "assets/Onboarding/onboard2.png",
-    description:
-    "Explore The Visuals And Predictions of Metal\nPrices By Ease.",
+    description: AppStrings.onboarding2Description,
     title: [
       TextSpan(
-        text: "For ",
+        text: AppStrings.onboarding2Title1,
         style: GoogleFonts.poppins(
           fontSize: 22,
           fontWeight: FontWeight.bold,
-          color: const Color(0xff17223B),
+          color: AppColors.darkText,
         ),
       ),
       TextSpan(
-        text: "Those Looking ",
+        text: AppStrings.onboarding2Title2,
         style: GoogleFonts.poppins(
-
           fontSize: 22,
           fontWeight: FontWeight.bold,
-          color: const Color(0xffF4A300),
+          color: AppColors.highlight,
         ),
       ),
       TextSpan(
-        text: "For\n Accuracy.",
+        text: AppStrings.onboarding2Title3,
         style: GoogleFonts.poppins(
           fontSize: 24,
           fontWeight: FontWeight.bold,
-          color: const Color(0xff17223B),
+          color: AppColors.darkText,
         ),
       ),
     ],
   ),
   OnboardingModel(
     image: "assets/Onboarding/onboard3.png",
-    description: "",
+    description: AppStrings.onboarding3Description,
     title: [
       TextSpan(
-
-        text: "Your Journey Of ",
-        style: GoogleFonts.poppins(
-
-          fontSize: 17,
-          fontWeight: FontWeight.w600,
-          color: const Color(0xff17223B),
-        ),
-      ),
-      TextSpan(
-        text: "Accuracy ",
-        style: GoogleFonts.poppins(
-          fontSize: 17,
-          fontWeight: FontWeight.bold,
-          color: const Color(0xffF4A300),
-        ),
-      ),
-      TextSpan(
-        text: "\n And ",
+        text: AppStrings.onboarding3Title1,
         style: GoogleFonts.poppins(
           fontSize: 17,
           fontWeight: FontWeight.w600,
-          color: const Color(0xff17223B),
+          color: AppColors.darkText,
         ),
       ),
       TextSpan(
-        text: "Simplicity ",
+        text: AppStrings.onboarding3Title2,
         style: GoogleFonts.poppins(
           fontSize: 17,
           fontWeight: FontWeight.bold,
-          color: const Color(0xffF4A300),
+          color: AppColors.highlight,
         ),
       ),
       TextSpan(
-        text: "\nBegins Here.",
+        text: AppStrings.onboarding3Title3,
+        style: GoogleFonts.poppins(
+          fontSize: 17,
+          fontWeight: FontWeight.w600,
+          color: AppColors.darkText,
+        ),
+      ),
+      TextSpan(
+        text: AppStrings.onboarding3Title4,
+        style: GoogleFonts.poppins(
+          fontSize: 17,
+          fontWeight: FontWeight.bold,
+          color: AppColors.highlight,
+        ),
+      ),
+      TextSpan(
+        text: AppStrings.onboarding3Title5,
         style: GoogleFonts.poppins(
           fontSize: 22,
           fontWeight: FontWeight.bold,
-          color: const Color(0xff17223B),
+          color: AppColors.darkText,
         ),
       ),
-
-
-
     ],
   ),
 ];

@@ -2,8 +2,10 @@ import 'package:digger/Presentation/widgets/custom_auth_screen/custom_button.dar
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:toastification/toastification.dart';
-import '../../Cubit/user_cubit.dart';
-import '../../Cubit/user_state.dart';
+import '../../Cubit/users/user_cubit.dart';
+import '../../Cubit/users/user_state.dart';
+import '../../core/constant/colors.dart';
+import '../../core/constant/strings.dart';
 import '../models/Validator.dart';
 import '../widgets/custom_auth_screen/Animated_container.dart';
 import '../widgets/custom_auth_screen/Toast_Helper.dart';
@@ -28,18 +30,18 @@ class _LoginScreenState extends State<LoginScreen> {
         if (state is SignInSuccess) {
           ToastHelper.showToast(
             context: context,
-            message: "Login successful ",
+            message: AppStrings.loginSuccess,
             type: ToastificationType.success,
           );
 
           Navigator.of(context).pushNamed(
-            "Verification",
+            "Home",
             arguments: context.read<UserCubit>().signInEmail.text.trim(),
           );
         } else if (state is SignInFailure) {
           ToastHelper.showToast(
             context: context,
-            message: "This account does not exist",
+            message: AppStrings.loginFailure,
             type: ToastificationType.error,
           );
         }
@@ -50,8 +52,8 @@ class _LoginScreenState extends State<LoginScreen> {
           body: Stack(
             children: [
               HeaderAuthScreen(
-                title: 'Hello!',
-                subtitle: 'Welcome to Digger App',
+                title: AppStrings.loginHello,
+                subtitle: AppStrings.loginWelcome,
               ),
               AuthAnimatedContainer(
                 child: SingleChildScrollView(
@@ -61,12 +63,12 @@ class _LoginScreenState extends State<LoginScreen> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        IntroText( text: 'Log In',),
+                        const IntroText(text: AppStrings.loginTitle),
                         const SizedBox(height: 20),
 
                         CustomTextField(
                           controller: context.read<UserCubit>().signInEmail,
-                          hint: "Email",
+                          hint: AppStrings.email,
                           icon: Icons.email_outlined,
                           validator: Validators.validateEmail,
                         ),
@@ -74,34 +76,36 @@ class _LoginScreenState extends State<LoginScreen> {
 
                         CustomTextField(
                           controller: context.read<UserCubit>().signInPassword,
-                          hint: "Password",
+                          hint: AppStrings.password,
                           icon: Icons.lock_outline,
                           obscure: true,
                           validator: Validators.validatePassword,
                         ),
 
-                        CustomForgetPassword(),
+                        const CustomForgetPassword(),
                         const SizedBox(height: 10),
 
                         state is SignInLoading
-                            ? const CircularProgressIndicator()
+                            ? const CircularProgressIndicator(
+                          color: AppColors.primary,
+                        )
                             : CustomButton(
-                                buttonText: "LOG IN",
-                                onPressed: () {
-                                  if (context
-                                      .read<UserCubit>()
-                                      .signInFormKey
-                                      .currentState!
-                                      .validate()) {
-                                    context.read<UserCubit>().SignIn();
-                                  }
-                                },
-                              ),
+                          buttonText: AppStrings.loginButton,
+                          onPressed: () {
+                            if (context
+                                .read<UserCubit>()
+                                .signInFormKey
+                                .currentState!
+                                .validate()) {
+                              context.read<UserCubit>().signIn();
+                            }
+                          },
+                        ),
                         const SizedBox(height: 20),
 
                         AuthFooter(
-                          bottomText: "Don't have an account?",
-                          bottomActionText: "Sign Up",
+                          bottomText: AppStrings.loginNoAccount,
+                          bottomActionText: AppStrings.loginSignUp,
                           onBottomTap: () {
                             Navigator.of(context).pushNamed("SignUP");
                           },

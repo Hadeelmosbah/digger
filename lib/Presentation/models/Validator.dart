@@ -1,34 +1,37 @@
+import '../../core/constant/strings.dart';
+
+
 class Validators {
   static String? validateEmail(String? value) {
     if (value == null || value.isEmpty) {
-      return "Please enter your email";
+      return AppStrings.enterEmail;
     }
     final emailRegex = RegExp(r'^[^@]+@[^@]+\.[^@]+');
     if (!emailRegex.hasMatch(value)) {
-      return "Please enter a valid email";
+      return AppStrings.invalidEmail;
     }
     return null;
   }
 
   static String? validatePassword(String? value) {
     if (value == null || value.isEmpty) {
-      return "Please enter your password";
+      return AppStrings.enterPassword;
     }
     if (value.length < 6) {
-      return "Password must be at least 6 characters";
+      return AppStrings.shortPassword;
     }
     return null;
   }
 
   static String? validateUsername(String? value) {
     if (value == null || value.isEmpty) {
-      return "Please enter your username";
+      return AppStrings.enterUsername;
     }
     if (value.length < 3) {
-      return "Username must be at least 3 characters";
+      return AppStrings.shortUsername;
     }
     if (value.length > 20) {
-      return "Username must be less than 20 characters";
+      return AppStrings.longUsername;
     }
     return null;
   }

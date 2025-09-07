@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../../core/constant/colors.dart';
 
 class AuthAnimatedContainer extends StatelessWidget {
   final Widget child;
@@ -20,7 +21,7 @@ class AuthAnimatedContainer extends StatelessWidget {
       child: Container(
         padding: const EdgeInsets.all(20),
         decoration: const BoxDecoration(
-          color: Color(0xffE4E4E4),
+          color: AppColors.screenBackground,
           borderRadius: BorderRadius.only(
             topLeft: Radius.circular(44),
             topRight: Radius.circular(44),

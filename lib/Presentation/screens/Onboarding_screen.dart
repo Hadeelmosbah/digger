@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-
+import '../../core/constant/colors.dart';
+import '../../core/constant/strings.dart';
 import '../models/Onboarding_model .dart';
 import '../widgets/Custom_Onboarding.dart';
 
@@ -18,26 +19,25 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xffd6d4d4),
+      backgroundColor: AppColors.screenBackground,
       body: SafeArea(
         child: Stack(
           children: [
-
             (currentPage != onboardingData.length - 1)
                 ? Align(
               alignment: Alignment.topRight,
-              child: TextButton(
-                onPressed: () {
-                  Navigator.of(context).pushNamed("Login");
-                },
-                child: Padding(
-                  padding: const EdgeInsets.only(top: 15, right: 10),
+              child: Padding(
+                padding: const EdgeInsets.only(top: 15, right: 10),
+                child: TextButton(
+                  onPressed: () {
+                    Navigator.of(context).pushNamed("Login");
+                  },
                   child: Text(
-                    "Skip",
+                    AppStrings.skip,
                     style: GoogleFonts.poppins(
                       fontSize: 16,
                       fontWeight: FontWeight.bold,
-                      color: const Color(0xff404D6C),
+                      color: AppColors.primary,
                     ),
                   ),
                 ),
@@ -54,25 +54,23 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                       curve: Curves.easeInOut,
                     );
                   },
-                  child:  Container(
+                  child: Container(
                     width: 40,
                     height: 40,
                     decoration: BoxDecoration(
-                      color: const Color(0xffD3D3D0),
+                      color: AppColors.lightGrey,
                       shape: BoxShape.circle,
                       border: Border.all(
-                        color: Color(0xffDBDBDB), 
+                        color: AppColors.border,
                         width: 2,
                       ),
                     ),
                     child: const Icon(
                       Icons.arrow_back_rounded,
-                      color: Color(0xff858891),
+                      color: AppColors.iconGrey,
                       size: 24,
                     ),
-                  )
-
-
+                  ),
                 ),
               ),
             ),
@@ -91,7 +89,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                   currentPage: index,
                   totalPages: onboardingData.length,
                   controller: viewController,
-                  model: onboardingData[currentPage],
+                  model: onboardingData[index],
                 );
               },
             ),

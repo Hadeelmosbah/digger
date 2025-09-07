@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+
 class HeaderAuthScreen extends StatelessWidget {
   final String title;
   final String subtitle;
@@ -18,18 +19,17 @@ class HeaderAuthScreen extends StatelessWidget {
         Container(
           height: double.infinity,
           width: double.infinity,
-          decoration: const BoxDecoration(
+          decoration:  BoxDecoration(
             image: DecorationImage(
               image: AssetImage("assets/login.jpg"),
               fit: BoxFit.cover,
               colorFilter: ColorFilter.mode(
-                Color(0xe81c1f32),
+               Color(0xEC343D53),
                 BlendMode.srcOver,
               ),
             ),
           ),
         ),
-
         SafeArea(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,

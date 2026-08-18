@@ -108,7 +108,7 @@ class _HomeScreenState extends State<HomeScreen> {
               itemCount: metals.length,
               itemBuilder: (context, index) {
                 final metal = metals[index];
-                final imageUrl = "http://your-api.com${metal.image}";
+                final imageUrl = "https://digger.runasp.net${metal.image}";
 
                 return MetalCard(
                   title: metal.name ?? "Unknown",

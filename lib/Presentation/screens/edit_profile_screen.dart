@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../../core/constant/colors.dart';
 import '../../core/constant/strings.dart';
-import '../../core/header_style.dart';
+import '../../core/constant/header_style.dart';
 import '../widgets/custom_auth_screen/custom_textfield.dart';
 
 class EditProfileScreen extends StatelessWidget {

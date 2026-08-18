@@ -101,6 +101,8 @@ class SignUpScreen extends StatelessWidget {
                         const SizedBox(height: 10),
 
                         AuthFooter(
+                          onFacebookTap: (){},
+                          onGoogleTap: (){},
                           bottomText: AppStrings.alreadyHaveAccount,
                           bottomActionText: AppStrings.login,
                           onBottomTap: () {

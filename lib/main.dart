@@ -3,6 +3,7 @@ import 'package:digger/Presentation/screens/home_screen.dart';
 import 'package:digger/Presentation/screens/splash_screen.dart';
 import 'package:digger/core/api/dio_consumer.dart';
 import 'package:dio/dio.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'Cubit/metals/metals_cubit.dart';
@@ -14,9 +15,12 @@ import 'Presentation/screens/login_screen.dart';
 import 'Presentation/screens/setting_screen.dart';
 import 'Presentation/widgets/home_page/custom_Loading_Screen.dart';
 import 'generated/l10n.dart';
+
 import 'package:flutter_localizations/flutter_localizations.dart';
 
-void main() {
+void main()  async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(
     MultiBlocProvider(
       providers: [

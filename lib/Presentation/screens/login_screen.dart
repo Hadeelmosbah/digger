@@ -104,6 +104,8 @@ class _LoginScreenState extends State<LoginScreen> {
                         const SizedBox(height: 20),
 
                         AuthFooter(
+                          onFacebookTap: (){},
+                          onGoogleTap: (){},
                           bottomText: AppStrings.loginNoAccount,
                           bottomActionText: AppStrings.loginSignUp,
                           onBottomTap: () {

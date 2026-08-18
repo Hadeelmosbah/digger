@@ -7,12 +7,16 @@ class AuthFooter extends StatelessWidget {
   final String bottomText;
   final String bottomActionText;
   final VoidCallback onBottomTap;
+  final VoidCallback onFacebookTap;
+  final VoidCallback onGoogleTap;
 
   const AuthFooter({
     super.key,
     required this.bottomText,
     required this.bottomActionText,
     required this.onBottomTap,
+    required this.onFacebookTap,
+    required this.onGoogleTap,
   });
 
   @override
@@ -61,23 +65,32 @@ class AuthFooter extends StatelessWidget {
 
         const SizedBox(height: 0),
 
+
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Padding(
               padding: const EdgeInsets.only(right: 10),
-              child: Image.asset(
-                "assets/Social/facebook.png",
-                height: 55,
-                width: 55,
-                fit: BoxFit.cover,
+              child: InkWell(
+                onTap: onFacebookTap,
+                borderRadius: BorderRadius.circular(30),
+                child: Image.asset(
+                  "assets/Social/facebook.png",
+                  height: 55,
+                  width: 55,
+                  fit: BoxFit.cover,
+                ),
               ),
             ),
-            Image.asset(
-              "assets/Social/google.png",
-              height: 30,
-              width: 30,
-              fit: BoxFit.cover,
+            InkWell(
+              onTap: onGoogleTap,
+              borderRadius: BorderRadius.circular(30),
+              child: Image.asset(
+                "assets/Social/google.png",
+                height: 30,
+                width: 30,
+                fit: BoxFit.cover,
+              ),
             ),
           ],
         ),

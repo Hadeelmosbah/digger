@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "629139578258",
+    "project_id": "digger-ff718",
+    "storage_bucket": "digger-ff718.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:629139578258:android:0de8c7294b2a3d7534b54b",
+        "android_client_info": {
+          "package_name": "com.example.digger"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "629139578258-f8chkrtjm21iqc11n9jbuvpd26fcas6e.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.digger",
+            "certificate_hash": "963473dc35e29d95541f223daf8721e92abf7a70"
+          }
+        },
+        {
+          "client_id": "629139578258-9njumto2j7svs3o807tf4srlnr3k352j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD74Ur3Y78Rdn9aRx9yh0q1609YalVzgik"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "629139578258-9njumto2j7svs3o807tf4srlnr3k352j.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../../core/constant/colors.dart';
 import '../../core/constant/strings.dart';
-import '../../core/header_style.dart';
+import '../../core/constant/header_style.dart';
 import '../widgets/Custom_setting/costom_logout_button.dart';
 import '../widgets/Custom_setting/language_title.dart';
 import '../widgets/Custom_setting/section_header.dart';
